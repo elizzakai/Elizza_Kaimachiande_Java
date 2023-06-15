@@ -1,4 +1,5 @@
-package com.company;
+import com.company.AccountRecord;
+import com.company.Customer;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,19 +9,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
-
 public class TestCode {
     Customer cus;
     AccountRecord acct;
     List<AccountRecord> acctlist;
+
     @BeforeEach
     public void setUp() {
         acctlist = new ArrayList<>();
         acct = new AccountRecord(100, "12-01-2021");
         acctlist.add(acct);
         cus = new Customer(1, "Bruce Wayne", acctlist);
-        cus.getCharges().add(new AccountRecord(200,"12-01-2020" ));
+        cus.getCharges().add(new AccountRecord(200, "12-01-2020"));
     }
 
     @Test
